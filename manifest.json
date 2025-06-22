@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "News Sentiment Analyzer",
+  "version": "1.0",
+  "description": "Extracts news articles and analyzes them with AI Models",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://api.anthropic.com/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "News Sentiment Analyzer"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js","Readability.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

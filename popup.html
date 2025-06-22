@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 300px;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        button {
+            background: #4285f4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #3367d6;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        #status {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            background: #f0f0f0;
+            text-align: left;
+        }
+        .bias-container {
+            display: flex;
+            width: 100%;
+            height: 30px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 15px 0;
+            font-family: sans-serif;
+            font-weight: bold;
+            color: white;
+            background: #f0f0f0; /* Fallback for no results */
+        }
+        .bias-left {
+            background-color: #b22222; /* firebrick */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: width 0.5s ease-in-out;
+        }
+        .bias-center {
+            background-color: white;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: width 0.5s ease-in-out;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+        }
+        .bias-right {
+            background-color: #4682b4; /* steelblue */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: width 0.5s ease-in-out;
+        }
+        #analysis-details {
+            margin-top: 10px;
+            text-align: left;
+        }
+        .model-selector {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>News Analysis</h2>
+        <div class="model-selector">
+            <label for="ai-model">AI Model:</label>
+            <select id="ai-model">
+                <option value="claude" selected>Claude Sonnet</option>
+                <option value="gemini">Gemini 2.0 Flash</option>
+            </select>
+        </div>
+        <button id="scanBtn">Ready to Scan</button>
+        <div id="status">Ready to scan!</div>
+        <div id="biasBar" class="bias-container"></div>
+        <div id="analysis-details"></div>
+    </div>
+    <script type="module" src="popup.js"></script>
+</body>
+</html>
