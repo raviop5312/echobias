@@ -1,5 +1,4 @@
-# Configuration files with sensitive data
-config.js
+
 
 # API keys and secrets
 *.key

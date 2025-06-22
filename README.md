@@ -55,3 +55,4 @@ This project utilizes Mozilla's **Readability.js** library to extract article co
 ## License
 
 This project is licensed under the **MIT License**. See the `LICENSE` file for details. 
+
