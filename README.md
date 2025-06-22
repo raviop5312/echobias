@@ -1,4 +1,4 @@
-# News Scanner & AI Analyzer
+# EchoBias : News Scanner & AI Analyzer
 
 This is a Chrome extension that analyzes the political bias of news articles using AI. It extracts the content from a web page and sends it to either Google's Gemini or Anthropic's Claude to get a political leaning score (Left, Center, Right) and a summary.
 
