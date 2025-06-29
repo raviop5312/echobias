@@ -51,6 +51,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 statusDiv.textContent = 'Analysis Complete!';
                 renderBiasBar(result.analysis.bias);
                 renderAnalysisDetails(result.analysis);
+                
+                // Send bias data to content script to show overlay on page
+                try {
+                    await chrome.tabs.sendMessage(tab.id, {
+                        action: "show_bias_overlay",
+                        biasData: {
+                            left: result.analysis.bias.left,
+                            center: result.analysis.bias.center,
+                            right: result.analysis.bias.right,
+                            summary: result.analysis.summary
+                        }
+                    });
+                } catch (overlayError) {
+                    console.log('Could not show overlay on page:', overlayError);
+                    // This is not critical - the popup still shows the results
+                }
             } else {
                 statusDiv.textContent = `Analysis failed: ${result.error || 'Invalid response from AI.'}`;
             }

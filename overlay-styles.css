@@ -1,0 +1,113 @@
+/* News Bias Overlay Styles */
+#news-bias-overlay {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 280px;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 10000;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+#news-bias-overlay .overlay-header {
+    background: #4285f4;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px 6px 0 0;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: grab;
+}
+
+#news-bias-overlay .overlay-header:active {
+    cursor: grabbing;
+}
+
+#news-bias-overlay .close-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+}
+
+#news-bias-overlay .close-button:hover {
+    opacity: 0.8;
+}
+
+#news-bias-overlay .overlay-content {
+    padding: 0 15px 15px 15px;
+}
+
+#news-bias-overlay .bias-bar {
+    display: flex;
+    width: 100%;
+    height: 30px;
+    margin: 15px 0 10px 0;
+    border-radius: 4px;
+    overflow: hidden;
+    font-weight: bold;
+    color: white;
+    font-size: 12px;
+}
+
+#news-bias-overlay .bias-left {
+    background-color: #b22222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.5s ease-in-out;
+}
+
+#news-bias-overlay .bias-center {
+    background-color: #f0f0f0;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.5s ease-in-out;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+#news-bias-overlay .bias-right {
+    background-color: #4682b4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.5s ease-in-out;
+}
+
+#news-bias-overlay .summary-text {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+    margin-top: 5px;
+}
+
+/* Animation for overlay appearance */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#news-bias-overlay.animate-in {
+    animation: slideIn 0.3s ease-out;
+} 

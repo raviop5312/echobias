@@ -1,18 +1,19 @@
 // Claude API service for article analysis
 import PROMPTS from './prompts.js';
 import CONFIG from './config.js';
+import { CLAUDE_API_KEY } from './keys.js';
 
 class ClaudeService {
     constructor() {
-        this.apiKey = CONFIG.CLAUDE_API_KEY;
+        this.apiKey = CLAUDE_API_KEY;
         this.baseUrl = 'https://api.anthropic.com/v1/messages';
     }
 
     async analyzeArticle(articleData) {
-        if (!this.apiKey || this.apiKey === 'YOUR_CLAUDE_API_KEY_HERE') {
+        if (!this.apiKey || this.apiKey === 'your-claude-api-key-here') {
             return {
                 success: false,
-                error: 'Claude API key is not configured in config.js'
+                error: 'Claude API key is not configured in keys.js'
             };
         }
 

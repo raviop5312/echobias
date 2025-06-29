@@ -1,18 +1,19 @@
 // Gemini API service for article analysis
 import PROMPTS from './prompts.js';
 import CONFIG from './config.js';
+import { GEMINI_API_KEY } from './keys.js';
 
 class GeminiService {
     constructor() {
-        this.apiKey = CONFIG.GEMINI_API_KEY;
+        this.apiKey = GEMINI_API_KEY;
         this.baseUrl = `https://generativelanguage.googleapis.com/v1beta/models/${CONFIG.GEMINI_MODEL}:generateContent`;
     }
 
     async analyzeArticle(articleData) {
-        if (!this.apiKey || this.apiKey === 'YOUR_GEMINI_API_KEY_HERE') {
+        if (!this.apiKey || this.apiKey === 'your-gemini-api-key-here') {
             return {
                 success: false,
-                error: 'Gemini API key is not configured in config.js'
+                error: 'Gemini API key is not configured in keys.js'
             };
         }
 
